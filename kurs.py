@@ -1,10 +1,12 @@
-# -*- coding: cp1251 -*-
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 #import scipy
 #import scipy.stats
 #объявим переменные атрибутов
 from Spearman import *
 from Primitiv import *
-from Baes import *
+#from Baes import *
+
 
 Person_Age =''
 Person_Pol =''
@@ -39,7 +41,7 @@ List_StepTest = [] #данные степ-теста
 List_Sklon = [] #склонение данных по степ-тесту
 List_Sosyd = [] #кол-во основных сосудов
 List_Sps = [] #степень повреждения сосудов
-#Выданный результат 
+#Выданный результат
 List_Rez =[]
 
 def readfile_and_filllists():
@@ -50,7 +52,7 @@ def readfile_and_filllists():
     #for i in li:
        # print i
     for stroka in li:
-        Person_Age,Person_Pol,Person_Har,Person_VG,Person_YH,Person_YS,Person_Card,Person_MaxP,Person_Sten,Person_StepTest,Person_Sklon,Person_Sosyd,Person_Sps,Person_Rez = stroka.split()  
+        Person_Age,Person_Pol,Person_Har,Person_VG,Person_YH,Person_YS,Person_Card,Person_MaxP,Person_Sten,Person_StepTest,Person_Sklon,Person_Sosyd,Person_Sps,Person_Rez = stroka.split()
         List_Age.append(float(Person_Age))
         List_Pol.append(float(Person_Pol))
         List_Har.append(float(Person_Har))
@@ -66,9 +68,9 @@ def readfile_and_filllists():
         List_Sps.append(float(Person_Sps))
         #Выданный результат список
         List_Rez.append(float(Person_Rez))
-    
+
 #вызов функций
 readfile_and_filllists()
 Spearmen(List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
 Result_Primitive=Primitive_Classifier(List_Rez)
-Baes_classifier(Result_Primitive[0],Result_Primitive[1],Result_Primitive[2],Result_Primitive[3],List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
+#Baes_classifier(Result_Primitive[0],Result_Primitive[1],Result_Primitive[2],Result_Primitive[3],List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)

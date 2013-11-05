@@ -1,4 +1,5 @@
-# -*- coding: cp1251 -*-
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import scipy
 import scipy.stats
 

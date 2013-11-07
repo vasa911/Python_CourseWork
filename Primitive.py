@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 def Primitive_Classifier(List_Rez):
-    print u"-----------------------Примитивный класификатор-----------------------"
+    print u"\n-----------------------ПРИМИТИВНЫЙ КЛАССИФИКАТОР-----------------------"
     number_patients = len(List_Rez)
-    print u"общее количество пациентов =",number_patients
+    print u"Общее количество пациентов =",number_patients
 
     # Подсчитаем  Количество здоровых и больных пациентов
     number_sick = 0
@@ -14,7 +14,7 @@ def Primitive_Classifier(List_Rez):
         if List_Rez[i]== 2:
             number_sick = number_sick + 1
     print "Количество больных пациентов =",number_sick
-    print "Количество здоровых пациентов=",number_healthy
+    print "Количество здоровых пациентов =",number_healthy
 
 
     # Определим вероятности, что пациент болен или здоров
@@ -23,7 +23,7 @@ def Primitive_Classifier(List_Rez):
 
 
     print "Вероятность больных пациентов =",Probability_sick
-    print "Вероятность здоровых пациентов=",Probability_healthy
+    print "Вероятность здоровых пациентов =",Probability_healthy
 
 
 
@@ -33,7 +33,6 @@ def Primitive_Classifier(List_Rez):
     List_primitive_sick = []
 
 
-    print "---------Возьмём пациента и проверим болен он или здоров"
     Person_Age =''
     Person_Pol =''
     Person_Har =''

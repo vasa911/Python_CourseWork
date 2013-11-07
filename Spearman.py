@@ -6,8 +6,8 @@ import scipy.stats
 # Corelation
 #scipy.stats.spearmanr(a, b=None, axis=0)[source]
 #scipy.stats. kendalltau ( X , Y , initial_lexsort = True )
-def Spearmen (Sp_Age,Sp_Pol,Sp_Har,Sp_VG,Sp_YH,Sp_YS,Sp_Card,Sp_MaxP,Sp_Sten,Sp_StepTest,Sp_Sklon,Sp_Sosyd,Sp_SPS,Sp_Rez):
-    print '-------------------Spearman Corelation'
+def Spearman (Sp_Age,Sp_Pol,Sp_Har,Sp_VG,Sp_YH,Sp_YS,Sp_Card,Sp_MaxP,Sp_Sten,Sp_StepTest,Sp_Sklon,Sp_Sosyd,Sp_SPS,Sp_Rez):
+    print '-----------------------SPEARMAN CORRELATION-----------------------'
     print '-------------Параметр №1 Возраст'
     print "Взаимсовязь c диагнозом"
     print scipy.stats.spearmanr(Sp_Age,Sp_Rez)[0]
@@ -59,4 +59,3 @@ def Spearmen (Sp_Age,Sp_Pol,Sp_Har,Sp_VG,Sp_YH,Sp_YS,Sp_Card,Sp_MaxP,Sp_Sten,Sp_
     print '-------------Параметр №13 степень повреждения сосудов'
     print "Взаимсовязь c диагнозом"
     print scipy.stats.spearmanr(Sp_SPS,Sp_Rez)[0]
-#Spearmen (Sp_Age,Sp_Pol,Sp_Har,Sp_VG,Sp_YH,Sp_YS,Sp_Card,Sp_MaxP,Sp_Sten,Sp_StepTest,Sp_Sklon,Sp_Sosyd,Sp_SPS,Sp_Rez)

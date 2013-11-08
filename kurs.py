@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from Spearman import *
 from Primitive import *
 from Bayes import *
+from Bayes_risks import *
 
 #объявим переменные параметров
 Person_Age =''
@@ -68,9 +69,12 @@ def Readfile_and_FillLists():
 
 #вызов функций
 Readfile_and_FillLists()
-Spearman(List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
+#Spearman(List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
 Result_Primitive=Primitive_Classifier(List_Rez)
 
 List_param=(List_Age,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_StepTest,List_Sklon,List_Sosyd,List_Sps)
 List_other_param=(List_Pol, List_Sten)
-Bayes_classifier(Result_Primitive[0],Result_Primitive[1],Result_Primitive[2],Result_Primitive[3],List_param, List_other_param, List_Rez)
+Result_Vocabulary = Bayes_classifier(Result_Primitive[0],Result_Primitive[1],Result_Primitive[2],Result_Primitive[3],List_param, List_other_param, List_Rez)
+Result_Bayes_risks=Bayes_classifier_risks(Result_Primitive[2],Result_Primitive[3],Result_Vocabulary)
+
+print Result_Primitive[4],Result_Bayes_risks[0],Result_Bayes_risks[1]  #результирующие списки

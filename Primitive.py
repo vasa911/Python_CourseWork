@@ -69,4 +69,20 @@ def Primitive_Classifier(List_Rez):
         List_primitive_healthy.append(Probability_healthy)
         List_primitive_sick.append(Probability_sick)
 
-    return (number_sick, number_healthy, Probability_sick, Probability_healthy)
+
+        print "Результат работы:"
+        if diagnosis==1 :
+            print " Диагноз = ЗДОРОВ"
+        if diagnosis==2 :
+            print " Диагноз= БОЛЕН"
+        print " Вероятность, что пациент здоров = ",Probability_healthy
+        print " Вероятность, что пациент болен = ",Probability_sick
+
+        if diagnosis==int(Person_Rez):
+            print"Диагнозы совпали!"
+        if diagnosis<>int(Person_Rez):
+            print "Диагнозы не совпали"
+
+
+
+    return (number_sick, number_healthy, Probability_sick, Probability_healthy,List_primitive_diagnosis)

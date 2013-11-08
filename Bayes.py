@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+Probability_result_healthy=1
+Probability_result_sick=1
+
 #«Байесовский классификатор»
 def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_healthy,List_param,List_other_param,List_Rez):
     print "\n-----------------------«БАЙЕСОВСКИЙ КЛАССИФИКАТОР»-----------------------"
@@ -56,7 +59,7 @@ def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_hea
         Probability_Baes_More_Healthy = float(Probability_healthy)*Probability_More_Healthy/float(Probability_parametr_More)
         #Вероятность, что болен,если возраст старше
         Probability_Baes_More_Sick = float(Probability_sick)*Probability_More_Sick/float(Probability_parametr_More)
-        return (amount_parametr_More,amount_parametr_Less,Probability_parametr_More,Probability_parametr_Less,Probability_Less_Healthy,Probability_Less_Sick,Probability_More_Healthy,Probability_More_Sick,Probability_Baes_Less_Healthy,Probability_Baes_Less_Sick,Probability_Baes_More_Healthy,Probability_Baes_More_Sick)
+        return (amount_parametr_More,amount_parametr_Less,Probability_parametr_More,Probability_parametr_Less,Probability_Less_Healthy,Probability_Less_Sick,Probability_More_Healthy,Probability_More_Sick,Probability_Baes_Less_Healthy,Probability_Baes_Less_Sick,Probability_Baes_More_Healthy,Probability_Baes_More_Sick, Middle_parametr)
 
 
     #Подсчет значений для параметров Пол и Наличие стенокардии
@@ -133,21 +136,21 @@ def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_hea
     Keys_param=('List_Age','List_Har','List_VG','List_YH','List_YS','List_Card','List_MaxP','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
     Keys_other_param=('List_Pol', 'List_Sten')
     Keys_all=('List_Age','List_Pol','List_Har','List_VG','List_YH','List_YS','List_Card','List_MaxP', 'List_Sten','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
-    Result_Vocabluary={'List_Age':0,'List_Har':0,'List_VG':0,'List_VG':0,'List_YH':0,'List_YS':0,'List_Card':0,'List_MaxP':0,'List_StepTest':0,'List_Sklon':0,'List_Sosyd':0,'List_Sps':0,'List_Pol':0, 'List_Sten':0}
+    Result_Vocabulary 	={'List_Age':0,'List_Har':0,'List_VG':0,'List_YH':0,'List_YS':0,'List_Card':0,'List_MaxP':0,'List_StepTest':0,'List_Sklon':0,'List_Sosyd':0,'List_Sps':0,'List_Pol':0, 'List_Sten':0}
 
 
-    #подсчет освных параметров и сохранение в словарь
+    #подсчет основных параметров и сохранение в словарь
     j = 0
     for i in List_param:
         a=calculate_parameters(i)
-        Result_Vocabluary[Keys_param[j]]=a
+        Result_Vocabulary 	[Keys_param[j]]=a
         j+=1
 
     #подсчет параметров: Пол и Наличие стенокардии, и сохранение в словарь
     j = 0
     for i in List_other_param:
         a=calculate_other_parameters(i)
-        Result_Vocabluary[Keys_other_param[j]]=a
+        Result_Vocabulary 	[Keys_other_param[j]]=a
         j+=1
 
     #Список названий параметров
@@ -158,4 +161,5 @@ def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_hea
         print"\n------------------------------------------"
         print "Параметр "+List_parametrname[i]
         print"------------------------------------------"
-        Output_results(Result_Vocabluary[Keys_all[i]],Keys_all[i])
+        Output_results(Result_Vocabulary 	[Keys_all[i]],Keys_all[i])
+    return Result_Vocabulary

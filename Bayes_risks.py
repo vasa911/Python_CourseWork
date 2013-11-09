@@ -82,7 +82,7 @@ def Bayes_classifier_risks(Probability_sick,Probability_healthy,Result_Dictionar
         #Определим болен или здоров пациент с учётом рисков
         print "--------Определим болен или здоров пациент с учётом рисков--------"
 
-        Say_sick_is_healthy = 15
+        Say_sick_is_healthy = 5
         Say_healthy_is_sick = 1
         print "Данные исходные "
         print "Сказать больному, что он здоров =",Say_sick_is_healthy

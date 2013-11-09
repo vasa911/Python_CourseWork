@@ -6,7 +6,6 @@ from Primitive import *
 from Bayes import *
 from Bayes_risks import *
 from Quality_classification import *
-from Kendall import *
 
 #объявим переменные параметров
 Person_Age =''
@@ -27,10 +26,8 @@ Person_Sps =''
 Person_Rez =''
 
 #объявим списки для хранения атрибутов
-# List_Card - нету (Юлин вариант)
 List_Age = [] #возраст
 List_Pol = [] #пол
-List_Har = []#характер боли в сердце
 List_VG = [] #верх граница давл
 List_YH = []#уровень холестерина
 List_YS = []# уровень сахара
@@ -55,7 +52,6 @@ def Readfile_and_FillLists(PathOfFile):
         Person_Age,Person_Pol,Person_Har,Person_VG,Person_YH,Person_YS,Person_Card,Person_MaxP,Person_Sten,Person_StepTest,Person_Sklon,Person_Sosyd,Person_Sps,Person_Rez = stroka.split()
         List_Age.append(float(Person_Age))
         List_Pol.append(float(Person_Pol))
-        List_Har.append(float(Person_Har))
         List_VG.append(float(Person_VG))
         List_YH.append(float(Person_YH))
         List_YS.append(float(Person_YS))
@@ -90,18 +86,16 @@ for i in range(5):
     #ВЫЗОВ ОСНОВНЫХ ФУНКЦИЙ
     #Чтение исходых данных и занесения их в списки
     Readfile_and_FillLists(PathOfFileTraining)
-##    #Оценка коеффициента ранговой корреляциии(Спирмен/Кэндалл)
-##    Spearman(List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
     #Оценка коеффициента ранговой корреляциии(Спирмен/Кэндалл)
-    Kendall(List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
-##    #Результаты работы и оценка работы ПРИМИТИВНОГО КЛАССИФИКАТОРА
-##    Result_Primitive=Primitive_Classifier(List_Rez,PathOfFileTesting)
-##    #Списки с параметрами коеффициентов
-##    List_param=(List_Age,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_StepTest,List_Sklon,List_Sosyd,List_Sps)
-##    List_other_param=(List_Pol, List_Sten)
-##    #Результаты работы БАйЕСОВСКОГО КЛАССИФИКАТОРА
-##    Result_Vocabulary = Bayes_classifier(Result_Primitive[0],Result_Primitive[1],Result_Primitive[2],Result_Primitive[3],List_param, List_other_param, List_Rez)
-##    #Оценка работы БАйЕСОВСКОГО КЛАССИФИКАТОРА. Результаты работы и оценка работы БАйЕСОВСКОГО КЛАССИФИКАТОРА С УЧЁТОМ РИСКОВ
-##    Result_Bayes_risks=Bayes_classifier_risks(Result_Primitive[2],Result_Primitive[3],Result_Vocabulary,PathOfFileTesting)
-##    #Вычисление характеристик качества классификации (уровни ошибок первого и второго рода)
-##    define_quality(Result_Primitive[4],Result_Bayes_risks[0],Result_Bayes_risks[1],Result_Bayes_risks[2])
+    Spearman(List_Age,List_Pol,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
+    #Результаты работы и оценка работы ПРИМИТИВНОГО КЛАССИФИКАТОРА
+    Result_Primitive=Primitive_Classifier(List_Rez,PathOfFileTesting)
+    #Списки с параметрами коеффициентов
+    List_param=(List_Age,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_StepTest,List_Sklon,List_Sosyd,List_Sps)
+    List_other_param=(List_Pol, List_Sten)
+    #Результаты работы БАйЕСОВСКОГО КЛАССИФИКАТОРА
+    Result_Vocabulary = Bayes_classifier(Result_Primitive[0],Result_Primitive[1],Result_Primitive[2],Result_Primitive[3],List_param, List_other_param, List_Rez)
+    #Оценка работы БАйЕСОВСКОГО КЛАССИФИКАТОРА. Результаты работы и оценка работы БАйЕСОВСКОГО КЛАССИФИКАТОРА С УЧЁТОМ РИСКОВ
+    Result_Bayes_risks=Bayes_classifier_risks(Result_Primitive[2],Result_Primitive[3],Result_Vocabulary,PathOfFileTesting)
+    #Вычисление характеристик качества классификации (уровни ошибок первого и второго рода)
+    define_quality(Result_Primitive[4],Result_Bayes_risks[0],Result_Bayes_risks[1],Result_Bayes_risks[2])

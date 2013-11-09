@@ -15,11 +15,9 @@ def Bayes_classifier_risks(Probability_sick,Probability_healthy,Result_Dictionar
         print "\nПациент №"+str(count) +" имеет такие атрибуты:"
         print " возраст =",Person_Age
         print " пол =",Person_Pol
-        print " характер боли в сердце (один из четырех)=",Person_Har
         print " верхняя граница давления в состоянии покоя	=",Person_VG
         print " уровень холестерина в крови mg/dl =",Person_YH
         print " уровень сахара в крови больший 20 mg/dl=",Person_YS
-        print " результаты кардиограммы в состоянии покоя (values 0,1,2)=",Person_Card
         print " максимальная величина пульса=",Person_MaxP
         print " наличие стенокардии в анамнезе=",Person_Sten
         print " данные степ-теста=",Person_StepTest
@@ -31,9 +29,9 @@ def Bayes_classifier_risks(Probability_sick,Probability_healthy,Result_Dictionar
         #номер пациента
         count+=1
         #Список, в котором хранятся все параметры пациента
-        List_Person_Paramets=[Person_Age, Person_Har,Person_VG,Person_YH,Person_YS,Person_Card,Person_MaxP, Person_StepTest,Person_Sklon,Person_Sosyd,Person_SPS,Person_Pol,Person_Sten]
+        List_Person_Paramets=[Person_Age, Person_VG,Person_YH,Person_YS,Person_MaxP, Person_StepTest,Person_Sklon,Person_Sosyd,Person_SPS,Person_Pol,Person_Sten]
         #Список названий параметров
-        Keys_param=('List_Age','List_Har','List_VG','List_YH','List_YS','List_Card','List_MaxP','List_StepTest','List_Sklon','List_Sosyd','List_Sps','List_Pol', 'List_Sten')
+        Keys_param=('List_Age','List_VG','List_YH','List_YS','List_MaxP','List_StepTest','List_Sklon','List_Sosyd','List_Sps','List_Pol', 'List_Sten')
 
         #Определим болен или здоров пациент
         print " Определим диагноз больного по построенному классфикатору:"

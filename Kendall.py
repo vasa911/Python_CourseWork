@@ -5,7 +5,7 @@ import scipy.stats
 
 # Corelation
 ##scipy.stats. kendalltau ( X , Y , initial_lexsort = True )
-def Kendall (List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez):
+def Kendall (List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez):
     print '-----------------------KENDALL CORRELATION-----------------------'
 
     print '-------------Параметр №1 Возраст'
@@ -36,9 +36,6 @@ def Kendall (List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_M
     print "Взаимсовязь c диагнозом"
     print scipy.stats.kendalltau(List_Card,List_Rez)[0]
 
-    print '-------------Параметр №8 максимальная величина пульса'
-    print "Взаимсовязь c диагнозом"
-    print scipy.stats.kendalltau(List_MaxP,List_Rez)[0]
 
     print '-------------Параметр №9 наличие стенокардии в анамнезе'
     print "Взаимсовязь c диагнозом"

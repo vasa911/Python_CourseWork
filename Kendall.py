@@ -5,16 +5,12 @@ import scipy.stats
 
 # Corelation
 ##scipy.stats. kendalltau ( X , Y , initial_lexsort = True )
-def Kendall (List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez):
+def Kendall (List_Age,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez):
     print '-----------------------KENDALL CORRELATION-----------------------'
 
     print '-------------Параметр №1 Возраст'
     print "Взаимсовязь c диагнозом"
     print scipy.stats.kendalltau(List_Age,List_Rez)[0]
-
-    print '-------------Параметр №2 Пол'
-    print "Взаимсовязь c диагнозом"
-    print scipy.stats.spearmanr(List_Pol,List_Rez)[0]
 
     print '-------------Параметр №3 Характер боли в сердце'
     print "Взаимсовязь c диагнозом"

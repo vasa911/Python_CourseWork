@@ -32,8 +32,14 @@ def define_quality(List_primitive_diagnosis,List_Baes_diagnosis,List_Baes_risks_
     #Посчитаем количество кол-во "положительных" и "отрицательных" объектов для каждого классификатора
     def count_positive_negative():
         for i in range(len(TP)):
-            Np[i]=TP[i]-FN[i]
-            Nn[i]=TN[i]-FP[i]
+            if TP[i]==FN[i]:
+                Np[i]=1
+            else:
+                Np[i]=TP[i]-FN[i]
+            if TN[i]==FP[i]:
+                Nn[i]=1
+            else:
+                Nn[i]=TN[i]-FP[i]
 
     #Посчитаем нормированные уровни ошибок первого и второго рода
     def count_errors():
@@ -71,3 +77,4 @@ def define_quality(List_primitive_diagnosis,List_Baes_diagnosis,List_Baes_risks_
             else:
                 print "          БАЙЕСОВСКИЙ КЛАССИФИКАТОР С УЧЕТОМ РИСКОВ"
             print "Количество обнаружений: TP="+str(TP[i])+" TN="+str(TN[i])+" FP="+str(FP[i])+" FN="+str(FN[i])+"\nНормированные уровни ошибок первого и второго рода: nFN="+str(nFN[i])+" nFP="+str(nFP[i])+" nTN="+str(nTN[i])+" nTP="+str(nTP[i])+"\nМера точности="+str(Precision[i])+"% Мера отзыва="+str(Recall[i])+"%"
+

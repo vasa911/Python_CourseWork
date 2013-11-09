@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from Spearman import *
 from Primitive import *
 from Bayes import *
 from Bayes_risks import *
@@ -25,11 +24,9 @@ Person_Sps =''
 
 #Выданный результат
 Person_Rez =''
-
 #объявим списки для хранения атрибутов
 # List_Card - нету (Юлин вариант)
 List_Age = [] #возраст
-List_Pol = [] #пол
 List_Har = []#характер боли в сердце
 List_VG = [] #верх граница давл
 List_YH = []#уровень холестерина
@@ -54,7 +51,6 @@ def Readfile_and_FillLists(PathOfFile):
     for stroka in li:
         Person_Age,Person_Pol,Person_Har,Person_VG,Person_YH,Person_YS,Person_Card,Person_MaxP,Person_Sten,Person_StepTest,Person_Sklon,Person_Sosyd,Person_Sps,Person_Rez = stroka.split()
         List_Age.append(float(Person_Age))
-        List_Pol.append(float(Person_Pol))
         List_Har.append(float(Person_Har))
         List_VG.append(float(Person_VG))
         List_YH.append(float(Person_YH))
@@ -91,14 +87,12 @@ for i in range(5):
     #Чтение исходых данных и занесения их в списки
     Readfile_and_FillLists(PathOfFileTraining)
     #Оценка коеффициента ранговой корреляциии(Спирмен/Кэндалл)
-    Spearman(List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
-    #Оценка коеффициента ранговой корреляциии(Спирмен/Кэндалл)
-    Kendall(List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
+    Kendall(List_Age,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez)
     #Результаты работы и оценка работы ПРИМИТИВНОГО КЛАССИФИКАТОРА
     Result_Primitive=Primitive_Classifier(List_Rez,PathOfFileTesting)
     #Списки с параметрами коеффициентов
     List_param=(List_Age,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_StepTest,List_Sklon,List_Sosyd,List_Sps)
-    List_other_param=(List_Pol, List_Sten)
+    List_other_param=List_Sten
     #Результаты работы БАйЕСОВСКОГО КЛАССИФИКАТОРА
     Result_Vocabulary = Bayes_classifier(Result_Primitive[0],Result_Primitive[1],Result_Primitive[2],Result_Primitive[3],List_param, List_other_param, List_Rez)
     #Оценка работы БАйЕСОВСКОГО КЛАССИФИКАТОРА. Результаты работы и оценка работы БАйЕСОВСКОГО КЛАССИФИКАТОРА С УЧЁТОМ РИСКОВ

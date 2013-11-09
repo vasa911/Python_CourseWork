@@ -122,10 +122,9 @@ def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_hea
 
 
     def Output_results(Parametr_Vales,Parametr_Name):
-        if (Parametr_Name=="List_Pol"):
-            output_string ="Количество пациентов мужчин = "+str(Parametr_Vales[0])+"\nКоличество пациентов женщин = "+str(Parametr_Vales[1])+"\nВероятность, что пациент мужчина = "+str(Parametr_Vales[2])+"\nВероятность, что пациент женщина = "+str(Parametr_Vales[3])+"\nВероятность того, что пациент мужчина и он здоров = "+str(Parametr_Vales[4])+"\nВероятность того, что пациент мужчина и он болен = "+str(Parametr_Vales[5])+"\nВероятность того, что пациент женщина и она здорова = "+str(Parametr_Vales[6])+"\nВероятность того, что пациент женщина и она больна = "+str(Parametr_Vales[7])+"\nВероятность, что здоров,если мужчина = "+str(Parametr_Vales[8])+"\nВероятность, что болен,если мужчина = "+str(Parametr_Vales[9])+"\nВероятность, что здорова,если женщина = "+str(Parametr_Vales[10])+"\nВероятность, что больна,если женщина = "+str(Parametr_Vales[11])
-        elif (Parametr_Name=="List_Sten"):
+        if (Parametr_Name=="List_Sten"):
             output_string ="Количество пациентов, у которых нет стенокардии в анамнезе = "+str(Parametr_Vales[0])+"\nКоличество пациентов, у которых есть стенокардия в анамнезе = "+str(Parametr_Vales[1])+"\nВероятность пациентов, у которых есть стенокардия в анамнезе = "+str(Parametr_Vales[2])+"\nВероятность пациентов, у которых нет стенокардии в анамнезе = "+str(Parametr_Vales[3])+"\nВероятность того, что у пациента  есть стенокардия в анамнезе и он здоров = "+str(Parametr_Vales[4])+"\nВероятность того, что у пациента  есть стенокардия в анамнезе и он болен = "+str(Parametr_Vales[5])+"\nВероятность того, что у пациента нет стенокардии в анамнезе и он здоров = "+str(Parametr_Vales[6])+"\nВероятность того, что у пациента нет стенокардии в анамнезе и он болен = "+str(Parametr_Vales[7])+"\nВероятность, что здоров ,если есть стенокардия в анамнезе = "+str(Parametr_Vales[8])+"\nВероятность, что болен ,если есть стенокардия в анамнезе = "+str(Parametr_Vales[9])+"\nВероятность, что здоров ,если нет стенокардия в анамнезе = "+str(Parametr_Vales[10])+"\nВероятность, что болен ,если нет стенокардия в анамнезе = "+str(Parametr_Vales[11])
+
         else:
             output_string ="Количечество пациентов, у которых значение параметра больше среднего = "+str(Parametr_Vales[0])+"\nКоличечество пациентов, у которых значение параметра меньше среднего = "+str(Parametr_Vales[1])+"\nВероятность того, что у пациента значение параметра больше среднего = "+str(Parametr_Vales[2])+"\nВероятность того, что у пациента значение параметра меньше среднего = "+str(Parametr_Vales[3])+"\nВероятность того, что у пациента параметр меньше среднего и он здоров = "+str(Parametr_Vales[4])+"\nВероятность того, что у пациента параметр меньше среднего и он болен = "+str(Parametr_Vales[5])+"\nВероятность того, что у пациента параметр больше среднего и он здоров = "+str(Parametr_Vales[6])+"\nВероятность того, что у пациента параметр меньше среднего и он болен = "+str(Parametr_Vales[7])+"\nВероятность, что здоров ,если параметр меньше среднего = "+str(Parametr_Vales[8])+"\nВероятность, что болен ,если параметр меньше среднего = "+str(Parametr_Vales[9])+"\nВероятность, что здоров ,если параметр больше среднего = "+str(Parametr_Vales[10])+"\nВероятность, что болен ,если параметр больше среднего = "+str(Parametr_Vales[11])
         print output_string
@@ -134,9 +133,8 @@ def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_hea
     number_patients = len(List_Rez)
 
     Keys_param=('List_Age','List_Har','List_VG','List_YH','List_YS','List_Card','List_MaxP','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
-    Keys_other_param=('List_Pol', 'List_Sten')
-    Keys_all=('List_Age','List_Pol','List_Har','List_VG','List_YH','List_YS','List_Card','List_MaxP', 'List_Sten','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
-    Result_Vocabluary={'List_Age':0,'List_Har':0,'List_VG':0,'List_VG':0,'List_YH':0,'List_YS':0,'List_Card':0,'List_MaxP':0,'List_StepTest':0,'List_Sklon':0,'List_Sosyd':0,'List_Sps':0,'List_Pol':0, 'List_Sten':0}
+    Keys_all=('List_Age','List_Har','List_VG','List_YH','List_YS','List_Card','List_MaxP','List_Sten','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
+    Result_Vocabluary={'List_Age':0,'List_Har':0,'List_VG':0,'List_VG':0,'List_YH':0,'List_YS':0,'List_Card':0,'List_MaxP':0,'List_StepTest':0,'List_Sklon':0,'List_Sosyd':0,'List_Sps':0,'List_Sten':0}
 
 
     #подсчет основных параметров и сохранение в словарь
@@ -146,15 +144,12 @@ def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_hea
         Result_Vocabluary[Keys_param[j]]=a
         j+=1
 
-    #подсчет параметров: Пол и Наличие стенокардии, и сохранение в словарь
-    j = 0
-    for i in List_other_param:
-        a=calculate_other_parameters(i)
-        Result_Vocabluary[Keys_other_param[j]]=a
-        j+=1
+    #подсчет параметра Наличие стенокардии  и сохранение в словарь
+    a=calculate_other_parameters(List_other_param)
+    Result_Vocabluary['List_Sten']=a
 
     #Список названий параметров
-    List_parametrname=('ВОЗРАСТ','ПОЛ','ХАРАКТЕР БОЛИ В СЕРДЦЕ','ВЕРХНЯЯ ГРАНИЦА ДАВЛЕНИЯ','УРОВЕНЬ ХОЛЕСТЕРИНА','УРОВЕНЬ САХАРА','РЕЗУЛЬТАТЫ КАРДИОГРАММЫ В СОСТОЯНИИ ПОКОЯ','МАКСИМАЛЬНАЯ ВЕЛИЧИНА ПУЛЬСА','НАЛИЧИЕ СТЕНОКАРДИИ','ДАННЫЕ СТЕП-ТЕСТА','СКЛОНЕНИЕ ДАННЫХ ПО СТЕП-ТЕСТУ','КОЛИЧЕСТВО ОСНОВНЫХ СОСУДОВ','СТЕПЕНЬ ПОВРЕЖДЕНИЯ СОСУДОВ')
+    List_parametrname=('ВОЗРАСТ','ХАРАКТЕР БОЛИ В СЕРДЦЕ','ВЕРХНЯЯ ГРАНИЦА ДАВЛЕНИЯ','УРОВЕНЬ ХОЛЕСТЕРИНА','УРОВЕНЬ САХАРА','РЕЗУЛЬТАТЫ КАРДИОГРАММЫ В СОСТОЯНИИ ПОКОЯ','МАКСИМАЛЬНАЯ ВЕЛИЧИНА ПУЛЬСА','НАЛИЧИЕ СТЕНОКАРДИИ','ДАННЫЕ СТЕП-ТЕСТА','СКЛОНЕНИЕ ДАННЫХ ПО СТЕП-ТЕСТУ','КОЛИЧЕСТВО ОСНОВНЫХ СОСУДОВ','СТЕПЕНЬ ПОВРЕЖДЕНИЯ СОСУДОВ')
 
     #Цикл вывода значений параметров
     for i in range(len(Keys_all)):

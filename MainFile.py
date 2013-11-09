@@ -93,7 +93,7 @@ for i in range(5):
     Result_Primitive=Primitive_Classifier(List_Rez,PathOfFileTesting)
     #Списки с параметрами коеффициентов
     List_param=(List_Age,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_StepTest,List_Sklon,List_Sosyd,List_Sps)
-    List_other_param=(List_Pol)
+    List_other_param=List_Pol
     #Результаты работы БАйЕСОВСКОГО КЛАССИФИКАТОРА
     Result_Vocabulary = Bayes_classifier(Result_Primitive[0],Result_Primitive[1],Result_Primitive[2],Result_Primitive[3],List_param, List_other_param, List_Rez)
     #Оценка работы БАйЕСОВСКОГО КЛАССИФИКАТОРА. Результаты работы и оценка работы БАйЕСОВСКОГО КЛАССИФИКАТОРА С УЧЁТОМ РИСКОВ

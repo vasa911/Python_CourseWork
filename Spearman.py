@@ -5,7 +5,7 @@ import scipy.stats
 
 # Corelation
 #scipy.stats.spearmanr(a, b=None, axis=0)[source]
-def Spearman (List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez):
+def Spearman (List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_MaxP,List_Sten,List_StepTest,List_Sklon,List_Sosyd,List_Sps,List_Rez):
     print '-----------------------SPEARMAN CORRELATION-----------------------'
     print '-------------Параметр №1 Возраст'
     print "Взаимсовязь c диагнозом"
@@ -30,10 +30,6 @@ def Spearman (List_Age,List_Pol,List_Har,List_VG,List_YH,List_YS,List_Card,List_
     print '-------------Параметр №6 уровень сахара в крови больший 120 mg/dl'
     print "Взаимсовязь c диагнозом"
     print scipy.stats.spearmanr(List_YS,List_Rez)[0]
-
-    print '-------------Параметр №7 результаты кардиограммы в состоянии покоя (values 0,1,2)'
-    print "Взаимсовязь c диагнозом"
-    print scipy.stats.spearmanr(List_Card,List_Rez)[0]
 
     print '-------------Параметр №8 максимальная величина пульса'
     print "Взаимсовязь c диагнозом"

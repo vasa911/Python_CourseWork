@@ -133,10 +133,10 @@ def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_hea
     #Вызов функций и определение нужных переменных
     number_patients = len(List_Rez)
 
-    Keys_param=('List_Age','List_Har','List_VG','List_YH','List_YS','List_Card','List_MaxP','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
+    Keys_param=('List_Age','List_Har','List_VG','List_YH','List_YS','List_MaxP','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
     Keys_other_param=('List_Pol', 'List_Sten')
-    Keys_all=('List_Age','List_Pol','List_Har','List_VG','List_YH','List_YS','List_Card','List_MaxP', 'List_Sten','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
-    Result_Vocabluary={'List_Age':0,'List_Har':0,'List_VG':0,'List_VG':0,'List_YH':0,'List_YS':0,'List_Card':0,'List_MaxP':0,'List_StepTest':0,'List_Sklon':0,'List_Sosyd':0,'List_Sps':0,'List_Pol':0, 'List_Sten':0}
+    Keys_all=('List_Age','List_Pol','List_Har','List_VG','List_YH','List_YS','List_MaxP', 'List_Sten','List_StepTest','List_Sklon','List_Sosyd','List_Sps')
+    Result_Vocabluary={'List_Age':0,'List_Har':0,'List_VG':0,'List_VG':0,'List_YH':0,'List_YS':0,'List_MaxP':0,'List_StepTest':0,'List_Sklon':0,'List_Sosyd':0,'List_Sps':0,'List_Pol':0, 'List_Sten':0}
 
 
     #подсчет основных параметров и сохранение в словарь
@@ -154,7 +154,7 @@ def Bayes_classifier(number_sick,number_healthy,Probability_sick,Probability_hea
         j+=1
 
     #Список названий параметров
-    List_parametrname=('ВОЗРАСТ','ПОЛ','ХАРАКТЕР БОЛИ В СЕРДЦЕ','ВЕРХНЯЯ ГРАНИЦА ДАВЛЕНИЯ','УРОВЕНЬ ХОЛЕСТЕРИНА','УРОВЕНЬ САХАРА','РЕЗУЛЬТАТЫ КАРДИОГРАММЫ В СОСТОЯНИИ ПОКОЯ','МАКСИМАЛЬНАЯ ВЕЛИЧИНА ПУЛЬСА','НАЛИЧИЕ СТЕНОКАРДИИ','ДАННЫЕ СТЕП-ТЕСТА','СКЛОНЕНИЕ ДАННЫХ ПО СТЕП-ТЕСТУ','КОЛИЧЕСТВО ОСНОВНЫХ СОСУДОВ','СТЕПЕНЬ ПОВРЕЖДЕНИЯ СОСУДОВ')
+    List_parametrname=('ВОЗРАСТ','ПОЛ','ХАРАКТЕР БОЛИ В СЕРДЦЕ','ВЕРХНЯЯ ГРАНИЦА ДАВЛЕНИЯ','УРОВЕНЬ ХОЛЕСТЕРИНА','УРОВЕНЬ САХАРА','МАКСИМАЛЬНАЯ ВЕЛИЧИНА ПУЛЬСА','НАЛИЧИЕ СТЕНОКАРДИИ','ДАННЫЕ СТЕП-ТЕСТА','СКЛОНЕНИЕ ДАННЫХ ПО СТЕП-ТЕСТУ','КОЛИЧЕСТВО ОСНОВНЫХ СОСУДОВ','СТЕПЕНЬ ПОВРЕЖДЕНИЯ СОСУДОВ')
 
     #Цикл вывода значений параметров
     for i in range(len(Keys_all)):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-def Bayes_classifier_risks(Probability_sick,Probability_healthy,Result_Dictionary):
+def Bayes_classifier_risks(Probability_sick,Probability_healthy,Result_Dictionary,PathOfFile):
     List_Baes_diagnosis=[]
     List_Baes_risks_diagnosis=[]
-    PathOfFile = "pacient.csv"
+    List_Correct_diagnosis=[]
     f=open(PathOfFile,"rb")
     li = f.readlines()
     f.close()
@@ -91,8 +91,8 @@ def Bayes_classifier_risks(Probability_sick,Probability_healthy,Result_Dictionar
 
         #нормируем
         amount_risks = Say_sick_is_healthy+Say_healthy_is_sick
-        Patient_Healthy_with_risk = Patient_Healthy*Say_sick_is_healthy/float(amount_risks)*Probability_sick
-        Patient_Sick_with_risk = Patient_Sick*Say_healthy_is_sick/float(amount_risks)*Probability_healthy
+        Patient_Healthy_with_risk = Patient_Healthy*Say_healthy_is_sick/float(amount_risks)*Probability_sick
+        Patient_Sick_with_risk = Patient_Sick*Say_sick_is_healthy/float(amount_risks)*Probability_healthy
         print "вероятность, что пациент здоров с учётом рисков= ",Patient_Healthy_with_risk
         print "вероятность, что пациент болен с учётом рисков= ",Patient_Sick_with_risk
 
@@ -113,4 +113,5 @@ def Bayes_classifier_risks(Probability_sick,Probability_healthy,Result_Dictionar
 
         List_Baes_diagnosis.append(BayesClassifier_Diagnosis)
         List_Baes_risks_diagnosis.append(BayesClassifier_Risks_Diagnosis)
-    return (List_Baes_diagnosis,List_Baes_risks_diagnosis)
+        List_Correct_diagnosis.append(int(Person_Rez))
+    return (List_Baes_diagnosis,List_Baes_risks_diagnosis,List_Correct_diagnosis)

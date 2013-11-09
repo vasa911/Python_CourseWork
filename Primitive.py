@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-def Primitive_Classifier(List_Rez):
+def Primitive_Classifier(List_Rez,PathOfFile):
     print u"\n-----------------------ПРИМИТИВНЫЙ КЛАССИФИКАТОР-----------------------"
     number_patients = len(List_Rez)
     print u"Общее количество пациентов =",number_patients
@@ -49,8 +49,6 @@ def Primitive_Classifier(List_Rez):
 
     #Выданный результат
     Person_Rez =''
-    #Берём 1/10 всех пациентов из файла для проверки
-    PathOfFile = "pacient.csv"
     f=open(PathOfFile,"rb")
     li = f.readlines()
     f.close()
@@ -82,7 +80,4 @@ def Primitive_Classifier(List_Rez):
             print"Диагнозы совпали!"
         if diagnosis<>int(Person_Rez):
             print "Диагнозы не совпали"
-
-
-
     return (number_sick, number_healthy, Probability_sick, Probability_healthy,List_primitive_diagnosis)

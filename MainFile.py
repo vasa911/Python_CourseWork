@@ -26,7 +26,6 @@ Person_Sps =''
 Person_Rez =''
 
 #объявим списки для хранения атрибутов
-# List_Card - нету (Юлин вариант)
 List_Age = [] #возраст
 List_Pol = [] #пол
 List_Har = []#характер боли в сердце
@@ -41,9 +40,6 @@ List_Sosyd = [] #кол-во основных сосудов
 List_Sps = [] #степень повреждения сосудов
 #Выданный результат
 List_Rez =[]
-
-#PathOfFileTraining="heart4.csv"
-
 
 def Readfile_and_FillLists(PathOfFile):
     f=open(PathOfFile,"rb")
